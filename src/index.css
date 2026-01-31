@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #2b8cee;
+    --color-accent: #f97316;
+    --color-background-light: #f6f7f8;
+    --color-background-dark: #101922;
+
+    --font-display: "Poppins", "sans-serif";
+    --font-public: "Poppins", "sans-serif";
+
+    --radius-DEFAULT: 0.25rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+}
+
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@layer components {
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .dark .glass-card {
+        background: rgba(25, 35, 45, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-glass {
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+    }
+
+    .dark .nav-glass {
+        background-color: rgba(16, 25, 34, 0.6);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
