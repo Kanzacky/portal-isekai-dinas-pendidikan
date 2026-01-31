@@ -1,4 +1,4 @@
-# 🏫 Portal Pusat Layanan Terpadu - Dinas Pendidikan
+# 🏫 Portal Isekai Layanan Terpadu - Dinas Pendidikan
 
 <div align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -10,7 +10,7 @@
 ---
 
 ## 🌟 Deskripsi Proyek
-Portal Resmi Dinas Pendidikan yang dirancang dengan estetika modern, premium, dan fokus pada kemudahan akses informasi bagi masyarakat. Platform ini mengintegrasikan berbagai layanan pendidikan digital dalam satu pintu (Single Entry Point) untuk meningkatkan transparansi dan efisiensi birokrasi.
+Portal Isekai Dinas Pendidikan yang dirancang dengan estetika modern, premium, dan fokus pada kemudahan akses informasi bagi masyarakat. Platform ini mengintegrasikan berbagai layanan pendidikan digital dalam satu pintu (Single Entry Point) untuk meningkatkan transparansi dan efisiensi birokrasi.
 
 ## ✨ Fitur Utama
 - **🎨 Modern Aesthetic UI**: Desain premiun dengan efek *glassmorphism*, tipografi yang tajam, dan palet warna profesional.
@@ -63,7 +63,7 @@ src/
 ```
 
 ## 📄 Lisensi
-Hak Cipta © 2026 Dinas Pendidikan. Seluruh Hak Dilindungi.
+Hak Cipta © 2026 Portal Isekai Dinas Pendidikan. Seluruh Hak Dilindungi.
 
 ---
 <div align="center">
