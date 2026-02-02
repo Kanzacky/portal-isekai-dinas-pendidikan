@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+        @apply bg-[#f6f7f8] text-slate-900 transition-colors duration-300;
+    }
+    .dark body {
+        @apply bg-[#101922] text-slate-100;
+    }
+}
+
+/* 4. LAYER COMPONENTS (UNTUK CLASS CUSTOM KAMU) */
+@layer components {
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .dark .glass-card {
+        background: rgba(25, 35, 45, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-glass {
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+    }
+
+    .dark .nav-glass {
+        background-color: rgba(16, 25, 34, 0.6);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///D:/StudyProject/portal-isekai-dinas-pendidikan/apps/frontend/app/%28full-page%29/auth/login/page.tsx"],"sourcesContent":["import LoginClient from \"@/components/LoginPage\";\r\n\r\nexport default function LoginPage() {\r\n  return <LoginClient />;\r\n}"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,qBAAO,oOAAC;AACV"}}]
+}

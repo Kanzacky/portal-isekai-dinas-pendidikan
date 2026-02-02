@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Database Service
+  mysql_db:
+    image: mysql:8.0
+    container_name: isekai_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: db_isekai_dinas
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Backend Service
+  backend:
+    build: ./apps/backend
+    container_name: isekai_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=mysql_db
+      - DB_DBMS=mysql2
+      - APP_PORT=8000
+    depends_on:
+      - mysql_db
+
+  # Frontend Service
+  frontend:
+    build: ./apps/frontend
+    container_name: isekai_frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
