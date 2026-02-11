@@ -23,14 +23,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         const accessToken = String(credentials.credential);
         const payload = parseJwt(accessToken);
 
-        if (!payload?.uniqueId) {
-          return null; 
-        }
+        if (!payload || !payload.uniqueId) return null;
 
         return {
-          id: payload.uniqueId,          
+          id: payload.uniqueId,
           uniqueId: payload.uniqueId,
           role: payload.role,
+          fullname: payload.fullname, 
+          username: payload.username,
           accessToken,
         };
       },
@@ -46,13 +46,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.accessToken = user.accessToken;
         token.uniqueId = user.uniqueId;
         token.role = user.role;
+        token.fullname = user.fullname;
+        token.username = user.username;
       }
       return token;
     },
     async session({ session, token }) {
-      session.accessToken = token.accessToken as string;
-      session.user.uniqueId = token.uniqueId as string;
-      session.user.role = token.role as string;
+      if (session.user) {
+        session.accessToken = token.accessToken as string;
+        session.user.uniqueId = token.uniqueId as string;
+        session.user.role = token.role as string;
+        session.user.fullname = token.fullname as string;
+        session.user.username = token.username as string;
+      }
       return session;
     },
   },

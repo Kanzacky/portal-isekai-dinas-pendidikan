@@ -1,7 +1,6 @@
 import { hmac, formatDateSystem } from "../routes/v1/components/tools/general.js";
 
 export async function seed(knex) {
-  // 1. Bersihkan semua tabel terkait untuk reset total
   await knex("user_navigation").del();
   await knex("user_credential").del();
   await knex("mst_navigation").del();
@@ -10,7 +9,6 @@ export async function seed(knex) {
   const cUserKey = process.env.USER_KEY;
   const cSecret = process.env.USER_SECRET;
 
-  // MASTER NAVIGATION DATA 
   const vaMstNavigation = [
     { Role: 'master', Menu: '[{"label":"ADMIN PANEL","items":[{"label":"Data User","icon":"pi pi-users","to":"/setup/user-login"}]}]' },
     { Role: 'guru', Menu: '[{"label":"MENU GURU","items":[{"label":"E-Learning","icon":"pi pi-book","to":"/guru/materi"}]}]' },
@@ -25,7 +23,6 @@ export async function seed(knex) {
     CreatedAt: dNow
   })));
 
-  // USER CREDENTIAL DATA 
   const vaUsers = [
     { UniqueId: "USR000001", Username: "admin@isekai.go.id", Fullname: "Administrator Dinas", Telp: "081234567890", Role: "admin", PasswordRaw: "AdminIsekai123!", Menu: vaMstNavigation[0].Menu },
     { UniqueId: "USR000002", Username: "guru@isekai.sch.id", Fullname: "Budi Setiawan, S.Pd", Telp: "081299998888", Role: "guru", PasswordRaw: "GuruIsekai123!", Menu: vaMstNavigation[1].Menu },
@@ -38,7 +35,6 @@ export async function seed(knex) {
     const cRawPass = cUserKey + user.UniqueId + user.PasswordRaw;
     const cHashedPassword = hmac(cRawPass, cSecret, 'sha512');
 
-    // Insert Credential
     await knex("user_credential").insert({
       Id: i + 1,
       UniqueId: user.UniqueId,
@@ -52,7 +48,6 @@ export async function seed(knex) {
       UpdatedAt: dNow
     });
 
-    // Insert Navigation matching with Credential
     await knex("user_navigation").insert({
       Id: i + 1,
       UniqueId: user.UniqueId,

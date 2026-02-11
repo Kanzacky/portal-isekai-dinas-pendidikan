@@ -17,7 +17,6 @@ router.use("/auth/token", AccessToken);
 router.use("/auth/login", [validateAccessToken], Login);
 
 // Modul
-// Setup
 router.use(
   "/setup",
   [validateAccessToken, validateSignature, contextMiddleware],
