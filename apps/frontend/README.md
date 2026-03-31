@@ -237,7 +237,3 @@ Hak Cipta © 2026
 **Portal Isekai – Dinas Pendidikan**
 
 ---
-
-<div align="center">
-Dibangun dengan arsitektur serius oleh <b>Kanzacky</b> 🚀
-</div>
